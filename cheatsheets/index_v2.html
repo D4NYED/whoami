@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cheat Sheets de Ciberseguridad">
+  <title>📜 Cheat Sheets - Ciberseguridad</title>
+
+  <!-- Bootstrap y Estilos -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="styles_v2.css">
+</head>
+
+<body>
+  <section class="principal">
+    <h2>CheatSheets - Ciberseguridad</h2> <!-- Agregado -->
+    <header>
+      <nav class="top-nav">
+        <ul class="nav-horizontal">
+          <li><a href="../index.html">Página Principal |</a></li>
+          <li><a href="/sobre-mi/index.html">👋 Sobre Mí |</a></li>
+          <li><a href="/ctf/index.html">Maquinas Ctfs |</a></li>
+        </ul>
+      </nav>
+    </header>
+  </section>
+  <!-- 📌 Barra lateral de navegación -->
+  <aside class="sidebar">
+    <h2>Ciberseguridad</h2>
+    <nav>
+      <ul>
+        <li class="category">Cheatsheet de Ciberseguridad
+          <ul>
+            <li class="subcategory" onclick="toggleMenu('comandos-linux')">Comandos Linux ▼
+              <ul id="comandos-linux" class="submenu" style="display: none;">
+                <li><a href="#" onclick="mostrarSeccion('actualizar')">Actualizar Linux</a></li>
+                <li><a href="#" onclick="mostrarSeccion('comando_esenciales')">Comando Esenciales</a></li>
+                <li><a href="#" onclick="mostrarSeccion('descomprimir')">Descomprimir archivo gz</a></li>
+              </ul>
+            </li>
+            <li class="subcategory" onclick="toggleMenu('herramientas')">Herramientas de Pentesting ▼
+              <ul id="herramientas" class="submenu" style="display: none;">
+                <li><a href="#" onclick="mostrarSeccion('reconimiento')">Reconocimiento y Enumeración</a></li>
+                <li><a href="#" onclick="mostrarSeccion('escaneo')">Escaneo de Vulnerabilidades</a></li>
+                <li><a href="#" onclick="mostrarSeccion('explotacion')">Explotación de Vulnerabilidades</a></li>
+              </ul>
+            </li>
+            <li class="subcategory">Redes y Protocolos</li>
+            <li class="subcategory">Explotación y Post-explotación</li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- 📌 Contenido principal -->
+
+  <!-- Comando linux -->
+  <main class="content">
+    <div id="actualizar" class="seccion">
+      <h1>Actualizar Linux</h1>
+      <ul>
+        <li><code>uname -a</code> - Muestra información del sistema.</li>
+        <li><code>grep VERSION /etc/os-release</code> - Muestra la versión de Linux.</li>
+        <li><code>sudo apt update && sudo apt full-upgrade -y</code> - Actualiza el sistema.</li>
+        <li><code>sudo apt update && sudo apt upgrade -y</code> - Actualiza los paquetes instalados.</li>
+        <li><code>sudo apt autoremove -y</code> - Elimina paquetes innecesarios.</li>
+      </ul>
+    </div>
+
+    <div id="comando_esenciales" class="seccion" style="display: none;">
+      <h1>Comandos Esenciales</h1>
+      <ul>
+        <li><code>chmod</code> - Modifica los permisos de archivo.</li>
+        <li><code>chown</code> - Cambia la propiedad de archivos.</li>
+        <li><code>dd</code> - Copia datos de una entrada a una salida.</li>
+        <li><code>pwd</code> - Muestra el nombre del directorio actual.</li>
+        <li><code>ps</code> - Enumera los procesos en ejecución.</li>
+        <li><code>su</code> - Simula un inicio de sesión como otro usuario.</li>
+        <li><code>sudo</code> - Ejecuta un comando como superusuario.</li>
+        <li><code>grep</code> - Busca cadenas de texto en archivos.</li>
+        <li><code>ifconfig</code> - Configura información de la red (usar 'ip address').</li>
+        <li><code>apt-get</code> - Administra paquetes en Debian.</li>
+        <li><code>iwconfig</code> - Configura tarjetas de red inalámbricas.</li>
+        <li><code>passwd</code> - Cambia la contraseña del usuario.</li>
+        <li><code>cat</code> - Muestra el contenido de un archivo.</li>
+        <li><code>man</code> - Muestra la documentación de un comando.</li>
+        <li><code>shutdown</code> - Apaga la computadora.</li>
+      </ul>
+      <h2>Comandos Comunes Relacionados con Archivos y Directorios</h2>
+      <ul>
+        <li><code>cd</code> - Cambia de directorio.</li>
+        <li><code>mkdir</code> - Crea directorios.</li>
+        <li><code>cp</code> - Copia archivos y directorios.</li>
+        <li><code>mv</code> - Mueve o renombra archivos.</li>
+        <li><code>rm</code> - Elimina archivos o directorios.</li>
+        <li><code>touch</code> - Crea un archivo vacío.</li>
+      </ul>
+    </div>
+    <div id="descomprimir" class="seccion" style="display: none;">
+      <h1>Descomprimir archivos gz</h1>
+      <pre><code>gzip -d rockyou.txt.gz</code></pre>
+    </div>
+    <!-- Comando herramientas -->
+    <div id="reconimiento" class="seccion">
+      <h1>Actualizar Linux</h1>
+      <ul>
+        <li><code>uname -a</code> - Muestra información del sistema.</li>
+        <li><code>grep VERSION /etc/os-release</code> - Muestra la versión de Linux.</li>
+        <li><code>sudo apt update && sudo apt full-upgrade -y</code> - Actualiza el sistema.</li>
+        <li><code>sudo apt update && sudo apt upgrade -y</code> - Actualiza los paquetes instalados.</li>
+        <li><code>sudo apt autoremove -y</code> - Elimina paquetes innecesarios.</li>
+      </ul>
+    </div>
+  </main>
+
+  <script>
+    function toggleMenu(id) {
+  var menu = document.getElementById(id);
+  var subcategory = document.querySelector(`[onclick="toggleMenu('${id}')"]`);
+
+  // Verifica si el menú está visible
+  if (menu.style.display === "none" || menu.style.display === "") {
+    menu.style.display = "block";
+    subcategory.innerHTML = subcategory.innerHTML.replace("▼", "▲");
+    localStorage.setItem(id, "open"); // Guarda el estado en localStorage
+  } else {
+    menu.style.display = "none";
+    subcategory.innerHTML = subcategory.innerHTML.replace("▲", "▼");
+    localStorage.removeItem(id); // Elimina el estado cuando se cierra
+  }
+}
+
+function mostrarSeccion(seccion) {
+  // Ocultar todas las secciones
+  document.querySelectorAll(".seccion").forEach(div => {
+    div.style.display = "none";
+  });
+
+  // Mostrar la sección seleccionada
+  document.getElementById(seccion).style.display = "block";
+
+  // Evita que el menú se cierre al hacer clic en un enlace
+  event.stopPropagation();
+}
+
+// Restaura el estado de los menús al recargar la página
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".submenu").forEach(menu => {
+    if (localStorage.getItem(menu.id) === "open") {
+      menu.style.display = "block";
+    }
+  });
+});
+
+// Evitar que se cierre al hacer clic en los elementos internos del menú
+document.querySelectorAll(".submenu a").forEach(item => {
+  item.addEventListener("click", function (event) {
+    event.stopPropagation();
+  });
+});
+
+  </script>
+
+  <section id="social-media">
+    <h3>Sígueme en mis redes sociales</h3>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/d4nyed" target="_blank" class="social-icon">
+        <i class="bi bi-linkedin"></i>
+      </a>
+      <a href="mailto:danyedhack@gmail.com" class="social-icon">
+        <i class="bi bi-envelope"></i>
+      </a>
+      <a href="https://x.com/D4nY3D" target="_blank" class="social-icon">
+        <i class="bi bi-x"></i>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-4 text-start">
+                <p>&copy; 2025 - Todos los derechos reservados</p>
+            </div>
+            
+            <div class="col-4 text-end">
+                <p style="color: white; font-weight: bold;">
+                    Powered By 
+                    <a href="https://www.linkedin.com/in/d4nyed" target="_blank" rel="noopener noreferrer" style="color: white; font-weight: bold;">
+                      D4nYeD
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Efecto de olas -->
+    <div class="wave-container">
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+    </div>
+    </footer>
+</body>
+
+</html>
