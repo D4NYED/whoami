@@ -110,8 +110,8 @@
   
   #sobre-mi {
     padding: 100px; /* Aumenta el padding superior e inferior */
-    height: 700px; /* Ajusta la altura total de la sección- Modificado antes estaba height */
-    background-image: url("sobre-mi/yoo.jpg"); /* Agrega la imagen de fondo */
+    height: 500px; /* Ajusta la altura total de la sección- Modificado antes estaba height */
+    background-image: url("sobre-mi/yo.jpg"); /* Agrega la imagen de fondo */
     background-size: cover; /* La imagen cubrirá toda la sección */
     background-position: center 25%; /* Bajamos un poco la imagen, a mayor porcentaje, más abajo estará */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -149,28 +149,6 @@
     margin-bottom: 20px;
   }
   
-  #sobre-mi .cta-button {
-    display: inline-flex;
-    align-items: center;
-    padding: 15px 30px;
-    background-color: #f7c600; /* Color amarillo para el botón */
-    color: #333; /* Color del texto del botón */
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1.2em;
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-  }
-  
-  #sobre-mi .cta-button i {
-    margin-right: 8px;
-    font-size: 1.5em;
-  }
-  
-  #sobre-mi .cta-button:hover {
-    background-color: #f0b700; /* Amarillo más oscuro al pasar el cursor */
-    transform: scale(1.05);
-  }
   
   /* Estilos generales de la sección */
   #conocimientos {
@@ -605,7 +583,6 @@
   }
   
   /* Estilos para los botones */
-   
   #ver-mas,
   #ver-menos {
     display: inline-block; /* Mostrar como bloque en línea */
@@ -954,7 +931,8 @@
     }
   
     #sobre-mi {
-      padding: 20px;
+      padding: 40px 15px;
+      min-height: 30px;
       background-color: #222; /* Fondo oscuro elegante */
       color: #f0f0f0; /* Texto claro para mejorar legibilidad */
       text-align: center; /* Centrar todo el texto */
@@ -975,25 +953,7 @@
       line-height: 1.6; /* Mejorar la legibilidad aumentando el espacio entre líneas */
     }
   
-    #sobre-mi .cta-button {
-      font-size: 1.2rem;
-      padding: 12px 20px; /* Botón más grande y cómodo de tocar */
-      background-color: #f0db4f; /* Botón amarillo destacado */
-      color: #333; /* Texto oscuro en el botón */
-      border: none; /* Sin borde para un estilo minimalista */
-      border-radius: 5px; /* Bordes redondeados para el botón */
-      text-decoration: none; /* Eliminar subrayado en el enlace */
-      display: inline-block; /* Botón en línea pero bloque */
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave para destacar */
-      transition: background-color 0.3s ease; /* Transición suave al interactuar */
-      margin-top: 20px; /* Espacio entre el botón y el contenido anterior */
-    }
-  
-    #sobre-mi .cta-button:hover {
-      background-color: #e8c547; /* Cambiar el color en hover para interacción */
-      color: #222; /* Color del texto en hover */
-    }
-  
+      
     #conocimientos {
       display: none;
     }
