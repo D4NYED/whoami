@@ -5,12 +5,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const textElement = document.getElementById("dynamic-text");
     if (textElement) {
         const texts = [
-            "Auditorías de ciberseguridad.",
-            "Desarrollo web y securización de servidores.",
-            "Programación con Python, Java y Bash.",
-            "Docencia de informática, hacking ético, ciberseguridad, bases de datos, etc.",
-            "Gestión de Bases de datos SQL y NoSQL.",
-            "Hardening sistemas linux."
+            "Estudiante de ASIR y apasionado de la ciberseguridad.",
+            "Pentesting y análisis de vulnerabilidades.",
+            "Administración y securización de sistemas Linux.",
+            "Programación en Python, Bash y herramientas de seguridad.",
+            "Monitoreo de seguridad con SIEM (Splunk, Wazuh, ELK).",
+            "Firewalling y detección de intrusos en redes.",
+            "Gestión de bases de datos SQL y NoSQL.",
+            "Pruebas de seguridad en entornos virtualizados."
 
         ];
         

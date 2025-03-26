@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const skillTexts = {
         "Ciberseguridad / Hacking Ético": "- Auditorías de ciberseguridad. \n- Securización de sistemas linux y servidores web.\n - Creacion de entornos vulnerables con fines educativos.",
         "Pentesting y Auditoría de Seguridad": " - Analista de ciberseguridad / hacking ético.\n - Programación con Python, Bash o Java.\n - Otras áreas de la informática (Bases de datos, redes, etc.).",
-        "Programación": " - Desarrollo de aplicaciones web o en plataforma.\n - Automatización de tareas mediante scripting.\n - Conocimiento en lenguajes como Python, JavaScript, y más."
+        "Programación": " - Desarrollo de aplicaciones web o en plataforma.\n - Automatización de tareas mediante scripting.\n - Conocimiento en lenguajes como Python, JavaScript, y más.",
+        "Blue Team": "- Monitorización de sistemas y detección de intrusos (SIEM, IDS/IPS).\n- Análisis de logs y eventos de seguridad.\n- Implementación de estrategias de defensa proactiva.\n- Gestión y respuesta ante incidentes de seguridad."
     };
     
     
