@@ -1,0 +1,396 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+ html,
+  body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    font-family: 'Fira Code', monospace;
+      }
+
+
+ /* Asegura que el footer no se vea empujado a la derecha */
+ .sidebar + .content + footer {
+    margin-left: 260px; /* Alinea con el contenido */
+    width: calc(100% - 260px); /* Ajusta para respetar la barra lateral */
+  }
+  
+  .principal {
+    position: relative;
+    height: 100vh; /* La sección ocupe toda la altura de la pantalla */
+    overflow: hidden; /* Evitamos el desbordamiento del contenido */
+    color: #fff;
+    text-align: center;
+  }
+
+
+  /* Barra de navegación superior (horizontal) */
+  .top-nav {
+    background-color: #000;
+    padding: 10px 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  .nav-horizontal {
+    display: flex;
+    list-style: none;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+  
+  .nav-horizontal li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 20px; /* Espacio entre los elementos */
+  }
+  
+  .nav-horizontal li a:hover {
+    color: #ff9800;
+  }
+  
+  /* Estilo de la barra lateral */
+  .sidebar {
+    width: 260px; /* Ancho fijo del menú lateral */
+    background-color: #111;
+    color: white;
+    padding: 20px;
+    overflow-y: auto;
+    position: fixed; /* Lo mantiene fijo en la izquierda */
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin-top: 60px; /* Ajusta esto según la altura de tu barra de navegación */
+    
+  }
+  
+  .sidebar h2 {
+    color: #ff9800;
+    text-align: center;
+    font-size: 1.2em;
+  }
+
+  
+  
+  /* Estilo del menú */
+  .nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .category {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+  
+  .subcategory {
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    background-color: #333;
+    margin-top: 5px;
+    border-radius: 5px;
+    color: white;
+  }
+  
+  .subcategory:hover {
+    background-color: #444;
+  }
+  
+  /* Submenú oculto */
+  .submenu {
+    padding-left: 20px;
+    display: none;
+  }
+  
+  .submenu li {
+    padding: 8px 0;
+  }
+  
+  .submenu li a {
+    color: #ff9800;
+    text-decoration: none;
+  }
+  
+  .submenu li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Contenido */
+  .content {
+    margin-left: 260px; /* Empuja el contenido hacia la derecha */
+    padding: 20px;
+    padding-bottom: 80px;
+    background: #222;
+    color: white;
+    overflow-x: auto;
+    min-height: 100vh; /* Asegura que ocupe toda la pantalla */
+    margin-top: 60px; /* Ajusta esto según la altura de tu barra de navegación */
+    width: 100%;
+    flex: 1;
+  }
+  
+  .seccion {
+    display: none;
+    margin-bottom: 20px;
+  }
+  
+  .h1 {
+    color: #ff9800;
+  }
+  
+  ul {
+    list-style-type: none; /* Elimina los puntos de la lista */
+    padding: 0;
+  }
+  
+  ul li {
+    margin-bottom: 10px; /* Espacio entre los elementos de la lista */
+  }
+  
+  code {
+    padding: 2px 4px; /* Espaciado interno */
+    border-radius: 4px; /* Bordes redondeados */
+    font-family: Arial, sans-serif; /* Cambia a una fuente más legible */
+    font-size: 14px; /* Ajusta el tamaño de la fuente si es necesario */
+    color: white; /* Color del texto del código */
+    border: 1px solid #ccc; /* Agrega un borde sutil si lo deseas */
+  }
+
+
+
+
+/* Estilos para el footer */
+footer {
+    position: relative;
+    background-color: #282828;
+    color: #fff;
+    padding: 40px 0; /* Ajusta el padding superior e inferior */
+    overflow: hidden; /* Asegúrate de que el efecto no se desborde */
+}
+
+/* Asegúrate de que el texto esté encima del efecto */
+footer .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Estilos para el contenedor de las olas */
+.wave-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px; /* Ajusta la altura de la ola */
+    overflow: hidden;
+    z-index: 1; /* Asegúrate de que el efecto esté detrás del contenido */
+}
+
+/* Efecto de olas */
+.wave {
+    position: absolute;
+    left: 50%;
+    width: 200%;
+    height: 100px; /* Por aquí puedo ajustar la altura de la ola */
+    background: linear-gradient(to right, rgba(180, 170, 26, 0.893) 0%, rgba(200, 161, 35, 0.938) 50%, rgb(192, 184, 34) 100%);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    animation: wave 10s linear infinite;
+}
+
+.wave.wave2 {
+    height: 150px; /* Mayor altura para olas más pronunciadas */
+    background: linear-gradient(to right, rgba(210, 193, 26, 0.982) 0%, rgba(200, 185, 29, 0.776) 50%, rgba(200, 196, 34, 0.2) 100%);
+    animation: wave 15s linear infinite;
+}
+
+@keyframes wave {
+    0% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(20px); /* Mayor desplazamiento vertical para olas más pronunciadas */
+    }
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* Estilos para alinear el texto y los íconos */
+footer .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    position: relative;
+    z-index: 2;
+    text-align: center; /* Centra el texto dentro de cada columna */
+}
+
+footer .col-4 {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra el contenido dentro de cada columna */
+}
+
+footer .text-start {
+    text-align: left;
+    flex: 1; /* Ocupa el espacio disponible a la izquierda */
+    padding-left: 20px; /* Espacio adicional a la izquierda */
+}
+
+footer .text-end {
+    text-align: right;
+    flex: 1; /* Ocupa el espacio disponible a la derecha */
+    padding-right: 20px; /* Espacio adicional a la derecha */
+}
+
+footer .text-center {
+    text-align: center;
+    flex: 1; /* Ocupa el espacio central */
+}
+
+footer .text-center i {
+    margin: 0 10px; /* Espacio entre los íconos */
+}
+
+/* Opcional: Estilos para los íconos en el footer */
+footer i {
+    font-size: 1.5em;
+    color: #fff; /* Color blanco para los íconos */
+}
+
+@media (max-width: 768px) {
+   /* Asegurar que no haya márgenes no deseados */
+   body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-horizontal {
+  display: flex;
+  gap: 5px; /* Reduce la separación entre elementos */
+  padding: 0;
+  margin: 0;
+}
+
+.nav-horizontal li {
+  margin-right: 5px; /* Reduce el margen derecho */
+  font-size: 0.5rem; /* Ajusta el tamaño de la letra */
+}
+
+.nav-horizontal a {
+  padding: 2px 5px; /* Reduce el espacio dentro de los enlaces */
+}
+
+.sidebar {
+      transform: translateX(0);
+      width: 150px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: #222;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+      margin-top: 10px; /* Ajusta según el tamaño de la barra */
+  }
+
+  .category {
+    font-size: 8px;
+    font-weight: bold;
+    margin-top: 1px;
+    padding-left: 10px;
+  }
+  
+  .subcategory {
+    cursor: pointer;
+    font-size: 10px;
+    padding: 5px;
+    background-color: #333;
+    margin-top: 5px;
+    border-radius: 5px;
+    color: white;
+    padding-left: 10px;
+  }
+  
+  .subcategory:hover {
+    background-color: #444;
+  }
+  
+  /* Submenú oculto */
+  .submenu {
+    padding-left: 10px;
+    display: none;
+  }
+  
+  .submenu li {
+    padding: 8px 0;
+  }
+  
+  .submenu li a {
+    color: #ff9800;
+    text-decoration: none;
+  }
+  
+  .submenu li a:hover {
+    text-decoration: underline;
+  }
+  .sidebar h2 {
+    font-size: 10px;
+  }
+
+  .sidebar.show {
+    transform: translateX(0);
+}
+
+/* Botón para abrir el menú */
+.sidebar + .content + footer {
+  margin-left: 260px; /* Alinea con el contenido */
+  width: calc(100% - 260px); /* Ajusta para respetar la barra lateral */
+}
+
+.content {
+  font-size: 6px; /* Reduce el tamaño del texto */
+  overflow-y: auto; /* Permite desplazamiento si hay mucho contenido */
+  margin-top: 40px; /* Ajusta esto según la altura de tu top-nav */
+  margin-left: 160px; /* Asegura que no haya margen a la derecha */
+  
+}
+
+.seccion{
+  margin-bottom: 20px;
+}
+
+.seccion h1 {
+  font-size: 8px; /* Reduce el tamaño del título en móviles */
+  text-align: center; /* Centra los títulos */
+}
+.seccion h2 {
+  font-size: 10px; /* Reduce el tamaño del título en móviles */
+  text-align: center; /* Centra los títulos */
+}
+
+
+code {
+  font-size: 8px; /* Hace que los comandos sean más compactos */
+  background: #222; /* Fondo oscuro para mejor lectura */
+  padding: 3px 6px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+}
